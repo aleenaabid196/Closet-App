@@ -4,6 +4,7 @@ import { sequelize } from '@/lib/database';
 import { compare } from "bcrypt";
 import { NextResponse } from "next/server";
 
+// maybe NextRequest instead of Request
 export async function POST(req: Request) {
     try {
         // Connect to database
