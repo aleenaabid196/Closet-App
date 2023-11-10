@@ -1,6 +1,7 @@
 import { AuthOptions } from "next-auth";
 import { sequelize } from '@/lib/database';
-import UserModel from '@/app/model/User'
+import UserModel from '@/app/model/User';
+import jwt from 'jsonwebtoken'
 
 import GitHubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";

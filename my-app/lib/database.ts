@@ -15,7 +15,7 @@ const dbName: string = process.env.DB_NAME || '';
 const dbDialect: string | undefined = process.env.DB_DIALECT;
 const dbPort: string | undefined = process.env.DB_PORT;
 
-console.log(dbHost, dbUserName, dbPassword, dbName, dbDialect);
+// console.log(dbHost, dbUserName, dbPassword, dbName, dbDialect);
 
 // Create a Sequelize instance
 export const sequelize = new Sequelize(dbName, dbUserName, dbPassword, {

@@ -9,10 +9,10 @@ const User = (sequelize: any) => {
             primaryKey: true,
             allowNull: false,
         },
-        username: {
+        userType: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
+            // unique: true,
         },
         name: {
             type: DataTypes.STRING,
@@ -30,11 +30,11 @@ const User = (sequelize: any) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        isActive: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-            defaultValue: true, // Default to active
-        },
+        // isActive: {
+        //     type: DataTypes.BOOLEAN,
+        //     allowNull: false,
+        //     defaultValue: true, // Default to active
+        // },
         createdAt: {
             type: DataTypes.DATE,
             allowNull: false,
