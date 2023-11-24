@@ -1,11 +1,13 @@
+"use client"
 import { Disclosure, Menu } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import logo from "@/public/logo/png/logo-grey-only-no-background.png"
+import Image from "next/image";
 
 const navigation = [
-  { name: "Feed", href: "#", current: true },
-  { name: "Discover", href: "#", current: false },
-  { name: "Shop", href: "#", current: false },
-  { name: "Challenges", href: "#", current: false },
+  { name: "Feed", href: "http://localhost:3000/home", current: true },
+  { name: "Discover", href: "http://localhost:3000/home", current: false },
+  // { name: "Shop", href: "http://localhost:3000/home", current: false },
 ];
 
 function classNames(...classes) {
@@ -33,11 +35,12 @@ export default function Navbar() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <img
+                  {/* <img
                     className="w-[105px] h-[25px]"
-                    src="https://shoplook.io/assets/logos/white.svg"
+                    src=""
                     alt=""
-                  />
+                  /> */}
+                  <Image src={logo} alt="logo" className="w-[20px]" />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
@@ -64,10 +67,10 @@ export default function Navbar() {
                 <Menu as="div" className="relative ml-3">
                   <div className="hidden sm:block">
                     <button className="btn font-[500] font-poppins text-[16px] leading-[-.18px] text-[#fff] bg-[#a039fc] rounded-[100px] w-[128px] h-[40px] mr-2 hover:bg-[#a039fc]">
-                      Create
+                      <a href="http://localhost:3000/home">Create</a>
                     </button>
                     <button className="btn font-[500] font-poppins text-[16px] leading-[-.18px] text-[#fff] bg-navbar hover:bg-navbar border-none rounded-[100px] w-[128px] h-[40px]">
-                      Log In
+                      <a href="http://localhost:3000/home">Log In</a>
                     </button>
                   </div>
                 </Menu>

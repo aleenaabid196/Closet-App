@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
 import { Provider } from './provider'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Poppins({ subsets: ['latin'], weight: ["400", "500"] })
 
 export const metadata: Metadata = {
   title: 'Closet Application',
@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Provider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
