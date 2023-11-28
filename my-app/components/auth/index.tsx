@@ -16,6 +16,10 @@ export default function Auth() {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   const { theme, setTheme } = useTheme();
+  // set dark theme
+  React.useEffect(() => {
+    setTheme("dark");
+  }, []);
 
   const { data } = useSession();
   console.log(data);
@@ -50,7 +54,7 @@ export default function Auth() {
           />
         ) : (
           <Image
-            src={"/logo/png/logo-no-background.png"}
+            src={"/logo/png/closet-high-resolution-logo-white-transparent.png"}
             alt="X"
             width={450}
             height={450}
@@ -68,7 +72,7 @@ export default function Auth() {
           <div className="w-full md:w-[60%]">
             <h2 className="font-bold text-3xl mb-4">Start today.</h2>
             <div className="flex flex-col space-y-2">
-              <Button
+              {/* <Button
                 onClick={() => signIn("google")}
                 label={
                   <div className="flex gap-2 items-center justify-center">
@@ -89,12 +93,12 @@ export default function Auth() {
                 }
                 fullWidth
                 secondary
-              />
-              <div className="flex items-center justify-center">
+              /> */}
+              {/* <div className="flex items-center justify-center">
                 <div className="h-px bg-gray-700 w-1/2" />
                 <p className="mx-4">or</p>
                 <div className="h-px bg-gray-700 w-1/2" />
-              </div>
+              </div> */}
               <Button
                 label={"Create account"}
                 fullWidth

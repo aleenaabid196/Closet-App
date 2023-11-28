@@ -10,6 +10,7 @@ export async function POST(req: Request) {
         // Connect to database
         const user = UserModel(sequelize);
         const { email, password } = await req.json();
+        console.log("Login API called");
 
         // is email and password valid?
         if (!email || !password) {
@@ -33,7 +34,8 @@ export async function POST(req: Request) {
         }
 
         // is password correct?
-        const isPasswordCorrect = await compare(password, isExistingUser.password);
+        // const isPasswordCorrect = await compare(password, isExistingUser.password);
+        const isPasswordCorrect = password === isExistingUser.password;
 
         if (!isPasswordCorrect) {
             return NextResponse.json(
@@ -43,6 +45,7 @@ export async function POST(req: Request) {
         }
 
         // return NextResponse.redirect("/dashboard");
+
         return NextResponse.json(
             { message: "Login Success", user: isExistingUser, success: true },
             { status: 200 }
