@@ -35,11 +35,11 @@ export default function FeaturesPanel() {
         <header className={styles.header}>
           <div className={styles.imageText}>
             <span className={styles.image}>
-              <Image src="/logo.png" alt="logo" width={40} height={40} />
+              <Image src="/logo/png/logo-grey-only-no-background.png" alt="logo" width={40} height={40} />
             </span>
 
             <div className={`${styles.text} ${styles.logoText}`}>
-              <span className={styles.name}>Quiz Mastery</span>
+              <span className={styles.name}>Digital Closet</span>
             </div>
           </div>
 
@@ -62,24 +62,24 @@ export default function FeaturesPanel() {
                 </Link>
               </li>
 
-            
 
-            
+
+
 
               <li className={styles.navLink}>
-                <Link href="/createTest" className={styles.a}>
+                <Link href="/create-outfit" className={styles.a}>
                   <i className={`${styles.icon}`}>
                     <BiPieChartAlt size={iconSize} />
                   </i>
                   <span className={`${styles.text} ${styles.navText}`}>
-                    Create Test
+                    Create Oufit
                   </span>
                 </Link>
               </li>
 
-              
 
-              
+
+
 
               <li className={styles.navLink}>
                 <Link href="/settings" className={styles.a}>
