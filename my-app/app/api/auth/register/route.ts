@@ -43,6 +43,7 @@ export async function POST(req: Request) {
                     { status: 400 }
                 );
             }
+            console.log("email", email);
 
             return NextResponse.json(
                 { message: "Email is available", success: true },
@@ -50,7 +51,7 @@ export async function POST(req: Request) {
             );
         }
         else if (step === "2") {
-            const { email, password } = await req.json();
+            const { email, username, name, password } = await req.json();
 
             // No email?
             if (!email || !password) {
@@ -78,12 +79,16 @@ export async function POST(req: Request) {
                     { status: 400 }
                 );
             }
-            const hashedPassword = await hash(password, 10);
+            // const hashedPassword = await hash(password, 10);
 
             const newUser = await user.create({
                 email,
-                password: hashedPassword
+                username,
+                name,
+                password
             });
+
+            console.log("User created")
 
             return NextResponse.json(
                 { message: "Register Success", user: newUser, success: true },

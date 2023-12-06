@@ -1,32 +1,23 @@
-import Dashboard from "@/components/dashboard/page";
+"use client";
+import React from "react";
+import Navbar from "../components/navbar";
+import Home from "../components/main";
+import Footer from "../components/footer";
+import { ThemeProvider, useTheme } from "next-themes"; 
 
+const landingPage = () => {
+  const { theme, setTheme } = useTheme();
+  React.useEffect(() => {
+    setTheme("dark");
+  }, []);
 
-import React from 'react'
-
-const page = () => {
-    return (
-        <Dashboard />
-    )
+  return (
+    <div>
+      <Navbar />
+      <Home />
+      <Footer />
+    </div>
+  )
 }
 
-export default page
-
-
-
-
-
-
-
-
-
-// import Button from "@/components/ui/button"
-// import Link from "next/link"
-
-// export default function Home() {
-//     return (
-//         <div>
-//             <Link href="./home">Click Me</Link>
-//             <Button label='Click Me' />
-//         </div>
-//     )
-// }
+export default landingPage

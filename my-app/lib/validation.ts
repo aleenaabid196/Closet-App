@@ -18,5 +18,4 @@ export const loginSchema = z.object({
 export const userSchema = z.object({
     name: z.string().min(3),
     username: z.string().min(3),
-    bio: z.string().min(3),
 });

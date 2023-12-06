@@ -9,14 +9,9 @@ const User = (sequelize: any) => {
             primaryKey: true,
             allowNull: false,
         },
-        userType: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            // unique: true,
-        },
         name: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         email: {
             type: DataTypes.STRING,
@@ -30,21 +25,37 @@ const User = (sequelize: any) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        // isActive: {
-        //     type: DataTypes.BOOLEAN,
-        //     allowNull: false,
-        //     defaultValue: true, // Default to active
-        // },
+        isActive: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true,
+            defaultValue: true, // Default to active
+        },
         createdAt: {
             type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: true,
             defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
         },
         updatedAt: {
             type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: Sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),
+            allowNull: true,
+            defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
         },
+        dateOfBirth: {
+            type: DataTypes.DATE,
+            allowNull: true,
+        },
+        gender: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+        },
+        Location: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        username: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        }
 
     });
 }

@@ -27,7 +27,7 @@ export const sequelize = new Sequelize(dbName, dbUserName, dbPassword, {
 
 // Define the User model using UserModel and pass the Sequelize instance
 const User = UserModel(sequelize);
-User.sync();
+// User.sync();
 
 // Synchronize the model with the database
 sequelize.sync() // { force: true } will drop the table if it exists
